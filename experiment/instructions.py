@@ -13,9 +13,18 @@ def build_instruction_text(key_color_map: dict[str, str]) -> str:
         ""
     ]
     
+    color_fr = {"red": "ROUGE", "yellow": "JAUNE", "green": "VERT", "blue": "BLEU"}
+    color_en = {"red": "(Red)", "yellow": "(Yellow)", "green": "(Green)", "blue": "(Blue)"}
+
+    mapping_parts = []
     for key, color in key_color_map.items():
-        lines.append(f"  '{key}' -> {color}")
-        
+        fr_word = color_fr.get(color, color.upper())
+        en_word = color_en.get(color, f"({color})")
+        mapping_parts.append(f"[{key}] = {fr_word} {en_word}")
+
+    mapping_str = "\n".join(mapping_parts)
+    
+    lines.append(mapping_str)
     lines.append("")
     lines.append("Ignorez le mot écrit. Répondez le plus rapidement possible.")
     lines.append("Ignore the written word. Respond as quickly as possible.")

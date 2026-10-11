@@ -4,12 +4,12 @@ Edit these values to customize the experiment behavior, keys, and display.
 """
 
 # 1. KEY_COLOR_MAP
-# Maps keyboard keys to color names
+# Maps keyboard keys to color names (Espacial: Esquerda para Direita)
 KEY_COLOR_MAP: dict[str, str] = {
-    "r": "red",
-    "b": "blue",
-    "g": "green",
-    "y": "yellow"
+    "d": "red",     # Dedo médio esquerdo
+    "f": "yellow",  # Dedo indicador esquerdo
+    "j": "green",   # Dedo indicador direito
+    "k": "blue"     # Dedo médio direito
 }
 
 # 2. WORD_MEANING_MAP
@@ -23,12 +23,12 @@ WORD_MEANING_MAP: dict[str, str] = {
 
 # 3. Temporização (Timing)
 FIXATION_DURATION: float = 0.5
-ISI_DURATION: float = 2.0
+ISI_DURATION: float = 0.5
 RESPONSE_TIMEOUT: float = float('inf')
 
 # 4. Número de trials (Trial counts)
-N_PRACTICE_TRIALS: int = 8
-N_EXPERIMENTAL_REPETITIONS: int = 5
+N_PRACTICE_TRIALS: int = 32
+N_EXPERIMENTAL_REPETITIONS: int = 10
 
 # 5. Display
 WINDOW_SIZE: tuple[int, int] = (1024, 768)
